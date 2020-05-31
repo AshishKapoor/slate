@@ -17,52 +17,58 @@ includes:
 search: true
 ---
 
-# Introduction
+# Integrating with Rill
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Rill API! You can use our API to access Rill API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# BigQuery
 
-> To authorize, use this code:
+> This page will help you get started with Rill Data. You'll be up and running in a jiffy!
+
+```javascript
+// Example code snippit
+const kittn = require('kittn');
+
+let api = kittn.authorize('rill-service-key');
+let kittens = api.kittens.get();
+```
 
 ```ruby
 require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('rill-service-key')
 ```
 
 ```python
 import kittn
 
-api = kittn.authorize('meowmeowmeow')
+api = kittn.authorize('rill-service-key')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: rill-service-key"
 ```
 
 ```javascript
 const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize('rill-service-key');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `rill-service-key` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Maybe have a link to Rill API support [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: rill-service-key`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>rill-service-key</code> with your personal API key.
 </aside>
 
 # Kittens
@@ -72,26 +78,26 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ```ruby
 require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('rill-service-key')
 api.kittens.get
 ```
 
 ```python
 import kittn
 
-api = kittn.authorize('meowmeowmeow')
+api = kittn.authorize('rill-service-key')
 api.kittens.get()
 ```
 
 ```shell
 curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: rill-service-key"
 ```
 
 ```javascript
 const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize('rill-service-key');
 let kittens = api.kittens.get();
 ```
 
@@ -138,26 +144,26 @@ Remember — a happy kitten is an authenticated kitten!
 ```ruby
 require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('rill-service-key')
 api.kittens.get(2)
 ```
 
 ```python
 import kittn
 
-api = kittn.authorize('meowmeowmeow')
+api = kittn.authorize('rill-service-key')
 api.kittens.get(2)
 ```
 
 ```shell
 curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: rill-service-key"
 ```
 
 ```javascript
 const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize('rill-service-key');
 let max = api.kittens.get(2);
 ```
 
@@ -192,27 +198,27 @@ ID | The ID of the kitten to retrieve
 ```ruby
 require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('rill-service-key')
 api.kittens.delete(2)
 ```
 
 ```python
 import kittn
 
-api = kittn.authorize('meowmeowmeow')
+api = kittn.authorize('rill-service-key')
 api.kittens.delete(2)
 ```
 
 ```shell
 curl "http://example.com/api/kittens/2"
   -X DELETE
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: rill-service-key"
 ```
 
 ```javascript
 const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize('rill-service-key');
 let max = api.kittens.delete(2);
 ```
 
