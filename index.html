@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -227,18 +227,26 @@
           </li>
           <li>
             <a href="#bigquery" class="toc-h1 toc-link" data-title="BigQuery">BigQuery</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#url-parameters" class="toc-h2 toc-link" data-title="URL Parameters">URL Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#custom-applications" class="toc-h1 toc-link" data-title="Custom Applications">Custom Applications</a>
+          </li>
+          <li>
+            <a href="#kafka" class="toc-h1 toc-link" data-title="Kafka">Kafka</a>
+          </li>
+          <li>
+            <a href="#cloud-buckets" class="toc-h1 toc-link" data-title="Cloud Buckets">Cloud Buckets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#google-cloud" class="toc-h2 toc-link" data-title="Google Cloud">Google Cloud</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#amazon-web-services" class="toc-h2 toc-link" data-title="Amazon Web Services">Amazon Web Services</a>
                   </li>
               </ul>
           </li>
@@ -248,7 +256,7 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://rilldata.com'>Rill Data, Inc</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -261,26 +269,24 @@
 
 <p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
 <h1 id='bigquery'>BigQuery</h1>
-<blockquote>
 <p>This page will help you get started with Rill Data. You&#39;ll be up and running in a jiffy!</p>
-</blockquote>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Example code snippit</span>
-<span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rilldata</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">rilldata</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">rilldata</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">rilldata</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">rilldata</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rilldata'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'rill-service-key'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">example</span> <span class="n">code</span> <span class="n">snippet</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">rilldata</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'rill-service-key'</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">rilldata</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'rill-service-key'</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: rill-service-key"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">rill</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">rilldata</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">rill</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>Make sure to replace <code>rill-service-key</code> with your API key.</p>
@@ -293,98 +299,6 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>rill-service-key</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: rill-service-key"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: rill-service-key"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -394,48 +308,148 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>The ID of the rill item to delete</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='custom-applications'>Custom Applications</h1>
+<p>Create custom apps to give your application users access to everything they need all in one place.</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// Example code snippit</span>
+<span class="kd">const</span> <span class="nx">rilldata</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">rilldata</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">rilldata</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">rilldata</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">rilldata</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rilldata'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'rill-service-key'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: rill-service-key"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<span class="n">example</span> <span class="n">code</span> <span class="n">snippet</span>
+</code></pre></div><h1 id='kafka'>Kafka</h1>
+<p>DescriptionApache Kafka is an open-source stream-processing software platform developed by LinkedIn and donated to the Apache Software Foundation, written in Scala and Java. The project aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds</p>
+<h1 id='cloud-buckets'>Cloud Buckets</h1>
+<p>The client can share their data to be read by Rill. </p>
+<h2 id='google-cloud'>Google Cloud</h2>
+<p>For sharing any Google Storage Bucket from a specific Google Cloud Project, we need to provide access to the Rill GCP Service Account (GSA).</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">rill-service-key</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<p>This Service Account is specific to the workspace and does NOT share credentials with any other workspaces. </p>
+
+<p>The Service Account can be retrieved from the Rill Control Center. They are generally in format of</p>
+
+<p><code>${organization}@iam.rilldata.com</code></p>
+<h3 id='to-provide-access-using-cli'>To provide access using CLI</h3><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>gsutil defacl ch <span class="nt">-u</span> <span class="se">\</span>
+    <span class="k">${</span><span class="nv">organization</span><span class="k">}</span>@iam.rilldata.com:OWNER <span class="se">\</span>
+    gs://<span class="k">${</span><span class="nv">BUCKET</span><span class="k">}</span>
+</code></pre></div><h3 id='to-provide-access-using-console'>To provide access using Console</h3>
+<ul>
+<li>Go to Storage Console: https://console.cloud.google.com/storage/browser.</li>
+<li>Select the bucket we want to provide access to.</li>
+<li>Select Permissions tab.</li>
+<li>Add permissions.</li>
+</ul>
+
+<p><img src="images/1-e988e650.png?raw=true" alt="" /></p>
+<h3 id='references'>References</h3>
+<ul>
+<li>https://cloud.google.com/dataprep/docs/concepts/gcs-buckets#granting_service_account_access_to_a_bucket</li>
+</ul>
+<h2 id='amazon-web-services'>Amazon Web Services</h2>
+<p>We can provide access to the S3 Bucket through an IAM Role which will be assumed by the Rill Data AWS Account to gain the access to the buckets. </p>
+<h3 id='create-role-using-cloudformation-console'>Create Role using Cloudformation Console</h3>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Use the following Cloudformation Template.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">AWSTemplateFormatVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2010-09-09'</span>
+<span class="na">Metadata</span><span class="pi">:</span>
+  <span class="na">License</span><span class="pi">:</span> <span class="s">Apache-2.0</span>
+
+<span class="na">Description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">AWS</span><span class="nv"> </span><span class="s">CloudFormation</span><span class="nv"> </span><span class="s">Template</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">providing</span><span class="nv"> </span><span class="s">Rill</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Access</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">Bucket.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">creates</span><span class="nv"> </span><span class="s">a</span>
+  <span class="s">Role</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">assumed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">RillData</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">Account.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">Role</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">IAM</span><span class="nv"> </span><span class="s">policy</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">them.'</span>
+
+<span class="na">Parameters</span><span class="pi">:</span>
+  <span class="na">BucketName</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">S3 Bucket Name. Don't append s3://.</span>
+  <span class="na">NamePrefix</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">Name prefix for the IAM Policy and IAM Role.</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s">rilldata</span>
+  <span class="na">ExternalID</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">External ID for Secured Cross Account Access.</span>
+    <span class="na">Default</span><span class="pi">:</span> <span class="s">r!lld@ta</span>
+
+<span class="na">Resources</span><span class="pi">:</span>
+  <span class="na">S3Role</span><span class="pi">:</span>
+    <span class="na">Type</span><span class="pi">:</span> <span class="s">AWS::IAM::Role</span>
+    <span class="na">Properties</span><span class="pi">:</span>
+      <span class="na">Description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">RillData</span><span class="nv"> </span><span class="s">Access</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">Bucket.</span><span class="nv"> </span><span class="s">Managed</span><span class="nv"> </span><span class="s">by:</span><span class="nv"> </span><span class="s">Cloudformation'</span>
+      <span class="na">AssumeRolePolicyDocument</span><span class="pi">:</span>
+        <span class="na">Version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2012-10-17'</span>
+        <span class="na">Statement</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+            <span class="na">Principal</span><span class="pi">:</span>
+              <span class="na">AWS</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s1">'</span><span class="s">arn:aws:iam::248432388601:root'</span>
+            <span class="na">Action</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s1">'</span><span class="s">sts:AssumeRole'</span>
+            <span class="na">Condition</span><span class="pi">:</span>
+              <span class="na">StringEquals</span><span class="pi">:</span>
+                <span class="s1">'</span><span class="s">sts:ExternalId'</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">ExternalID</span>
+      <span class="na">Policies</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">PolicyName</span><span class="pi">:</span> <span class="kt">!Join</span>
+            <span class="pi">-</span> <span class="s1">'</span><span class="s">'</span>
+            <span class="pi">-</span> <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">NamePrefix</span>
+              <span class="pi">-</span> <span class="s1">'</span><span class="s">S3AccessPolicy'</span>
+          <span class="na">PolicyDocument</span><span class="pi">:</span>
+            <span class="na">Statement</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">Effect</span><span class="pi">:</span> <span class="s">Allow</span>
+              <span class="na">Action</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">s3:*'</span><span class="pi">]</span>
+              <span class="na">Resource</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="kt">!Join</span>
+                  <span class="pi">-</span> <span class="s1">'</span><span class="s">'</span>
+                  <span class="pi">-</span> <span class="pi">-</span> <span class="s1">'</span><span class="s">arn:aws:s3:::'</span>
+                    <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">BucketName</span>
+                <span class="pi">-</span> <span class="kt">!Join</span>
+                  <span class="pi">-</span> <span class="s1">'</span><span class="s">'</span>
+                  <span class="pi">-</span> <span class="pi">-</span> <span class="s1">'</span><span class="s">arn:aws:s3:::'</span>
+                    <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">BucketName</span>
+                    <span class="pi">-</span> <span class="s1">'</span><span class="s">/*'</span>
+      <span class="na">RoleName</span><span class="pi">:</span> <span class="kt">!Join</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">-'</span>
+        <span class="pi">-</span> <span class="pi">-</span> <span class="kt">!Ref</span> <span class="s">NamePrefix</span>
+          <span class="pi">-</span> <span class="s">s3-access</span>
+      <span class="na">Tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">Key</span><span class="pi">:</span> <span class="s">Accessor</span>
+          <span class="na">Value</span><span class="pi">:</span> <span class="s">RillData</span>
+        <span class="pi">-</span> <span class="na">Key</span><span class="pi">:</span> <span class="s">ManagedBy</span>
+          <span class="na">Value</span><span class="pi">:</span> <span class="s">Cloudformation</span>
+
+<span class="na">Outputs</span><span class="pi">:</span>
+  <span class="na">RoleName</span><span class="pi">:</span>
+    <span class="na">Value</span><span class="pi">:</span> <span class="kt">!GetAtt</span> <span class="pi">[</span><span class="nv">S3Role</span><span class="pi">,</span> <span class="nv">Arn</span><span class="pi">]</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">S3 Access Role Arn, to be shared with RillData</span>
+  <span class="na">ExternalID</span><span class="pi">:</span>
+    <span class="na">Value</span><span class="pi">:</span> <span class="kt">!Ref</span> <span class="s">ExternalID</span>
+    <span class="na">Description</span><span class="pi">:</span> <span class="s">ExternalID for Secured Access, to be shared with RillData</span>
+</code></pre></div>
+<ul>
+<li>Open AWS Cloudformation to create a new Stack - https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template</li>
+<li>Upload the CFN Template and Specify Stack details.
+** Stack Name: <code>rilldata-s3-access</code>
+** Bucket Name: Name of the bucket we want to provide access to.</li>
+</ul>
+
+<p><img src="images/2-dbe01934.png?raw=true" alt="" /></p>
+
+<ul>
+<li>Click Next, Again Next, Acknowledge the Capabilities and Create the Stack.</li>
+<li>You can check the events and it should create the resources for you.</li>
+</ul>
+
+<p><img src="images/3-f9e36051.png?raw=true" alt="" /></p>
+
+<ul>
+<li>Share the Outputs with Rill Data</li>
+</ul>
+
+<p><img src="images/4-f19c9bef.png?raw=true" alt="" /></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
